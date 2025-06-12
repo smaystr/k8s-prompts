@@ -1,0 +1,5 @@
+Generate a **Pod** named `app-config` that runs one container **mypod** on image `redis` (`imagePullPolicy: Always`). Inside `spec`, maintain **this exact key order**:  
+  ① `containers:` block,  
+  ② `volumes:` block,  
+  ③ `restartPolicy:`.  
+Container requirements: • mount a volume `config-volume` (sourced from an existing ConfigMap `app-config`) at `/config`; • expose env var `CONFIGMAP_PARAM` using `env.valueFrom.configMapKeyRef` (`name: app-config`, `key: config-param`). Declare the volume in `spec.volumes`; set `restartPolicy: Never`. Return only YAML. 

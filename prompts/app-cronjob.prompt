@@ -1,0 +1,1 @@
+Generate a **CronJob** named `app-cronjob` with `apiVersion: batch/v1beta1`. It must run every **5 minutes** (`schedule: "*/5 * * * *"`). The job template should create one container `hello` using the `bash` image and execute the command `["echo", "Hello world"]`. Set `restartPolicy: OnFailure`. Return only YAML. 

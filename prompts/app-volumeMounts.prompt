@@ -1,0 +1,20 @@
+Generate a Kubernetes Pod manifest that satisfies **every item below exactly — no extra resources**.
+1. apiVersion: v1, kind: Pod, metadata.name: `app-volume` (default namespace).
+2. One container called **app** running image `gcr.io/kuar-demo/kuard-amd64:1`.
+3. Expose **containerPort 8080** with `name: http`.
+4. Add **livenessProbe**:
+   - httpGet path `/healthy`, port 8080
+   - initialDelaySeconds 5, timeoutSeconds 1, periodSeconds 10, failureThreshold 3
+5. Add **readinessProbe**:
+   - httpGet path `/ready`, port 8080
+   - initialDelaySeconds 0, periodSeconds 2, successThreshold 1, failureThreshold 3
+6. Mount a volume:
+   - volumeMounts:
+       - mountPath: "/data"
+         name: data
+   - volumes:
+       - name: data
+         hostPath:
+           path: "/var/lib/app"
+7. Do **NOT** create PersistentVolumeClaim, StorageClass, or any extra objects.
+8. Preserve key order as shown and return **only YAML inside triple back-ticks**, nothing else. 

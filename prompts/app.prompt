@@ -1,0 +1,1 @@
+Generate a Kubernetes **Pod** named `app` in the default namespace. Run one container `app` on image `gcr.io/k8s-k3s/demo:v1.0.0`, expose **containerPort 8000** (`name: http`), add labels `app: demo` & `run: demo`. Return only YAML. 
