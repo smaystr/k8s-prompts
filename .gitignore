@@ -1,2 +1,41 @@
 # Memory Bank
-memory-bank/ 
+memory-bank/
+
+# Логи и временные файлы
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Go specific
+/bin/
+/pkg/
+/vendor/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+go.work
+go.sum
+
+# IDE/Editor
+.vscode/
+.idea/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Node/npm
+node_modules/
+
+# Backup files
+*~ 
